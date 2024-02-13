@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  go-tdd:
+    image: golang:1.20-alpine
+    volumes:
+      - type: bind
+        source: .
+        target: /opt/learn-go-through-tdd
+    working_dir: /opt/learn-go-through-tdd
+    entrypoint: ["go", "test"]
+    command: ["./..."]
